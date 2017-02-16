@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <title>Bill Management App</title>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="color:white;font-size:20px;">Bill Management App</a>
+            </div>
+        </div>
+  </nav>
+  <br><br><br><br>
+  <div class="container" ng-controller="AppCtrl">
+      <form name="myForm" class="my-form">
+            <div class="form-group">
+              <label for="inputEmail">Email address</label>
+              <input type="email" class="form-control" id="inputEmail"  ng-model="login.email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="inputPassword">Password</label>
+              <input type="password" class="form-control" id="inputPassword" ng-model="login.password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default" ng-click="loginFn()">Login</button>
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">SignUp</button>
+      </form>
+
+      <!-- <h1>{{unauthorized.message}}</h1> -->
+      
+<!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+            </div>
+            <div class="modal-body">
+              <form>
+                  <div class="form-group">
+                    <label for="inputName">Name</label>
+                    <input type="name" class="form-control" id="inputName"  ng-model="newUser.name" placeholder="Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPhone">phone</label>
+                    <input type="phone" class="form-control" id="inputPhone"  ng-model="newUser.phone" placeholder="Phone">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail"  ng-model="newUser.email" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" ng-model="newUser.password" placeholder="Password">
+                  </div>
+                  <button type="button" class="btn btn-primary" ng-click="createUserFn()">Sign Up</button>
+                </form>           
+            </div>
+            <div class="modal-footer">
+              <!-- <h1>{{userCreated.Message}}</h1> -->
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+ </div>
+  <script src="js/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-cookies.min.js"></script>
+  <script src="controllers/controller.js"></script>
+</body>
+</html>

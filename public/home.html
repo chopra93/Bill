@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <title>Bill Management App</title>
+</head>
+<body >
+  <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="color:black;font-size:20px;">BillMan</a>
+                &nbsp
+            </div>
+            
+            <div class="nav navbar-nav navbar-right" ng-controller="AppCtrl">
+                <a href ="home.html" class="navbar-brand" style="color:black;font-size:20px;">Profile</a>
+                <a href ="bill.html" class="navbar-brand" style="color:black;font-size:20px;">Bill</a>
+                <button type="button" class="btn btn-default navbar-btn" ng-click = "logoutFn()">Logout</button>
+            </div>
+        </div>
+  </nav>
+  <br><br><br><br>
+  <div class="container" ng-controller="AppCtrl" ng-init = "getUserInformation()">
+      <h1>Welcome to Bill Management App</h1>
+      <hr>
+      <div class="list-group">
+                <a href="#" class="list-group-item active">
+                  User Profile
+                </a>
+                <a href="#" class="list-group-item">{{information.Users[0].name}}</a>
+                <a href="#" class="list-group-item">{{information.Users[0].email}}</a>
+                <a href="#" class="list-group-item">{{information.Users[0].phone}}</a>
+      </div>
+  </div>
+ 
+  <script src="js/angular.min.js"></script>
+  <script src="js/angular-cookies.js"></script>
+  <script src="js/angular-cookies.min.js"></script>
+  <script src="controllers/controller.js"></script>
+</body>
+</html>
